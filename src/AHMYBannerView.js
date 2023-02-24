@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TouchableOpacity, View, ScrollView} from 'react-native';
+import {TouchableOpacity, View, ScrollView, AHRNIndicatorView} from 'autohome-lib';
 
 export class AHMYBannerView extends Component {
     static defaultProps = {
@@ -145,21 +145,6 @@ export class AHMYBannerView extends Component {
         this.setState({
             currentIndex: currentPage
         })
-        this.handleCorrectIndex(currentPage);
-    }
-
-    handleCorrectIndex(index) {
-        let currentIndex = index;
-        if (this.state.count > 1 && this.props.autoScroll) {
-            if (currentIndex === 0) {
-                currentIndex = this.state.banner.length - 1;
-            } else if (currentIndex === this.state.count - 1) {
-                currentIndex = 0;
-            } else {
-                currentIndex = currentIndex - 1;
-            }
-        }
-        this.props.bannerCurrentIndex && this.props.bannerCurrentIndex(currentIndex);
     }
 
     renderViewList() {
@@ -192,6 +177,35 @@ export class AHMYBannerView extends Component {
             );
         }
         return arrComp;
+    }
+
+    renderIndicatorView = () => {
+        if (!this.state.banner || this.state.banner.length < 2) {
+            return null;
+        }
+        let currentIndex = this.state.currentIndex;
+        if (this.props.autoScroll && this.state.count > 1) {
+            if (currentIndex === 0) {
+                currentIndex = this.state.banner.length - 1;
+            } else if (currentIndex === this.state.count - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex = currentIndex - 1;
+            }
+        }
+        return (
+            <AHRNIndicatorView
+                style={{
+                    position: "absolute",
+                    width: this.bannerWidth,
+                    height: 10,
+                    bottom: 5,
+                    alignSelf: "center",
+                }}
+                count={this.state.banner.length}
+                currentindex={currentIndex}
+            />
+        )
     }
 
     render() {
@@ -227,6 +241,7 @@ export class AHMYBannerView extends Component {
                 >
                     {this.renderViewList()}
                 </ScrollView>
+                {this.renderIndicatorView()}
             </View>
         )
     }

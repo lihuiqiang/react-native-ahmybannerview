@@ -1,6 +1,6 @@
 {
   "name": "react-native-ahmybannerview",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,9 @@
   "dependencies": {
     "react": "17.0.1",
     "react-native": "6420.0.1"
+  },
+  "devDependencies": {
+    "autohome-lib": "^2.1.0-beta.1"
   },
   "author": "lihuiqiang",
   "license": "MIT",
