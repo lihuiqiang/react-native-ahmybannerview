@@ -1,0 +1,26 @@
+{
+  "name": "react-native-ahmybannerview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lihuiqiang/react-native-ahmybannerview.git"
+  },
+  "keywords": [
+    "banner"
+  ],
+  "dependencies": {
+    "react": "17.0.1",
+    "react-native": "6420.0.1"
+  },
+  "author": "lihuiqiang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lihuiqiang/react-native-ahmybannerview/issues"
+  },
+  "homepage": "https://github.com/lihuiqiang/react-native-ahmybannerview#readme"
+}
