@@ -217,7 +217,6 @@ export class AHMYBannerView extends Component {
                     onMomentumScrollEnd={this.onMomentumScrollEnd}
                     onContentSizeChange={() => {
                         if (this.isFirstInit) {
-                            console.log('change');
                             this.isFirstInit = false;
                             this.scrollview && this.scrollview.scrollTo({
                                 x: this.bannerWidth * this.state.currentIndex,
