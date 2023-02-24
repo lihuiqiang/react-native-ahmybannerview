@@ -1,4 +1,4 @@
 import {AHMYBannerView} from "./src/AHMYBannerView";
-moudle.exports = {
+module.exports = {
     AHMYBannerView
 }
